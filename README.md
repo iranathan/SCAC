@@ -12,7 +12,7 @@ Using SCAC is as easy as one-two-three:
 ![Demonstration of the tool](/assets/demo.gif)
 
 ## Contributing
-Contributing to SCAC fills the hearts of many, and helps to keep this project constantly moving. It's really easy to get started with contributing ideas and issues, so check out [the contributing guide](.github/CONTRIBUTING) and [the Code of Conduct](.github/CODE_OF_CONDUCT.md) to get started.
+Contributing to SCAC fills the hearts of many, and helps to keep this project constantly moving. It's really easy to get started with contributing ideas and issues, so check out and [the Code of Conduct](.github/CODE_OF_CONDUCT.md) to get started.
 
 ## License
 MIT License
