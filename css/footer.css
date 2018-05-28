@@ -1,0 +1,9 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.93);
+}
+
+#countries {
+  padding-bottom: 2rem;
+}

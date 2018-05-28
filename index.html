@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Search &raquo; SCAC</title>
+    
+    <!-- Required metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Spotify Query JS -->
+    <script src="/javascript/main.js" type="text/javascript" defer></script>
+    
+    <!-- jQuery JS -->
+    <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="/css/footer.css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-2">Spotify Content Availability Checker</h1>
+      <p>Using the <a href="https://beta.developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check where certain tracks can be streamed from.</p>
+      <form class="form">
+        <div class="row">
+          <div class="col-md">
+            <label for="trackInput">Enter the Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track in the box below:</label>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-md">
+            <input type="text" class="form-control mb-3" id="trackInput" placeholder="Spotify URL or URI of a track">
+          </div>
+          <div class="col-auto">
+            <button type="button" onclick="parse()" class="btn btn-success goBtn">Search</input>
+          </div>
+        </div>
+      </form>
+      <div class="alert alert-secondary alert-dismissible fade show" id="authAlert" role="alert">
+        If you've just arrived here, you may not be authenticated. Click "Search" above to check, or click <a href="#" onclick="parse()" class="alert-link">here</a>!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div>
+        <span id="warnings" style="display: none"></span>
+        <p id="playButton"></p>
+        <p id="description"></p>
+        <p id="countries"></p>
+      </div>
+      <span class="footer">
+        <p>
+          <a href="about.html" target="_self">About</a> | <a href="#" id="bug_tracker">Report issues or suggest features</a>
+        </p>
+      </span>
+      <script>
+        function getURLParameter(e) {
+          return decodeURI((new RegExp(e + "=(.+?)(&|$)").exec(location.search) || [, ""])[1]);
+        }
+        
+        if (getURLParameter("track") === "") {
+          console.log("No input URL param found");
+        } else {
+          document.getElementById("trackInput").value = getURLParameter("track");
+        }
+      </script>
+      <script>
+        BugTracker = {
+          group_project: "https://freedcamp.com/Spotify_Projects_EQk/SAC_OC6/bugtracker/bugtracker_public",
+          Button: [document.getElementById("bug_tracker")]
+        }
+      </script>
+      <script src="https://cdn.freedcamp.com/project_apps/bugtracker/js/bugtracker_public.js"></script>
+    </div>
+  </body>
+</html>
