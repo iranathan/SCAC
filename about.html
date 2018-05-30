@@ -40,7 +40,7 @@
           type: "GET",
           success: function success(data) {
             var sha = JSON.stringify(data[0].sha).slice(1, 41);
-            document.getElementById("shaHash").innerHTML = "<a href='https://github.com/ItsPugle/scac/tree/" + sha + "' target='_blank'>" + sha + "</a>"
+            document.getElementById("shaHash").innerHTML = "<a href='https://github.com/ItsPugle/scac/commit/" + sha + "' target='_blank'>" + sha + "</a>"
           }
         });
       </script>
