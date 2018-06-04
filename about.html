@@ -17,7 +17,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
     <!-- 
     JavaScript Libraries 
     -->
@@ -39,25 +38,13 @@
       <h1 class="mt-2">About</h1>
       <p>Spotify Content Availability Checker (SCAC for short) allows anyone to enter a Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track and find what "markets" (countries) where people can stream that content.</p>
       <div id="quickFacts">
-      <h2>Quick Facts</h2>
-      <dl>
-        <dt>Current Version</dt>
-        <dd><abbr title="v1.1.2 since 28 May 2018">v1.1.2</abbr></dd>
-        <dt>Repository</dt>
-        <dd><a href="https://github.com/ItsPugle/scac" target="_blank">ItsPugle/scac</a></dd>
-        <dt>Production Hash</dt>
-        <dd id="shaHash">Loading...</dd>
-      </dl>
-      <script>
-        $.ajax({
-          url: "https://api.github.com/repos/itspugle/scac/commits",
-          type: "GET",
-          success: function success(data) {
-            var sha = JSON.stringify(data[0].sha).slice(1, 41);
-            document.getElementById("shaHash").innerHTML = "<a href='https://github.com/ItsPugle/scac/commit/" + sha + "' target='_blank'>" + sha + "</a>"
-          }
-        });
-      </script>
+        <h2>Quick Facts</h2>
+        <dl>
+          <dt>Current Version</dt>
+          <dd><abbr title="v1.1.2 since 28 May 2018">v1.1.2</abbr></dd>
+          <dt>Repository</dt>
+          <dd><a href="https://github.com/ItsPugle/scac" target="_blank">ItsPugle/scac</a></dd>
+        </dl>
       </div>
       <div id="acknowledgements">
       <h2>Acknowledgements</h2>
