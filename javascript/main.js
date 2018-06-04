@@ -46,7 +46,8 @@ function search(trackID) {
       },
       success: function success(data) {
         var str = data.available_markets,
-          trackName = JSON.stringify(data.name);
+          trackName = JSON.stringify(data.name),
+          markets = "<ul><li>" + str.join("</li><li>") + "</li></ul>";
         if (str.toString() === "") {
           trackName = trackName.slice(1, trackName.length - 1);
           document.getElementById("description").innerHTML = "<strong>" + trackName + "</strong> song is available anywhere Spotify is available.";
@@ -54,7 +55,6 @@ function search(trackID) {
           document.getElementById("playButton").innerHTML = embedPrefix + trackID + embedSuffix;
           document.getElementById("authAlert").style.display = "none";
         } else {
-          var markets = "<ul><li>" + str.join("</li><li>") + "</li></ul>";
           trackName = trackName.slice(1, trackName.length - 1);
           document.getElementById("description").innerHTML = "<strong>" + trackName + "</strong> is available in these countries:";
           document.getElementById("countries").innerHTML = markets;
