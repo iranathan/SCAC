@@ -3,7 +3,7 @@ SCAC allows anyone to find the markets where Spotify songs can be streamed :head
 
 **Why?** Because knowing about music licensing can be hard to stay "in the loop" about; and that's what SCAC is for. When music is truely available to all, it takes its trueform of inspiration.
 
-## Get Started
+## Get started
 Using SCAC is as easy as one-two-three:
 1. Head to https://scac.itspugle.ga and click "Search",
 2. Authenticate the tool by pressing "OKAY" on the Spotify authorisation page,
@@ -12,7 +12,7 @@ Using SCAC is as easy as one-two-three:
 ![Demonstration of the tool](/assets/demo.gif)
 
 ## Contributing
-Contributing to SCAC fills the hearts of many, and helps to keep this project constantly moving. It's really easy to get started with contributing ideas and issues, so check out and [the Code of Conduct](.github/CODE_OF_CONDUCT.md) to get started.
+Contributing to SCAC fills the hearts of many, and helps to keep this project constantly moving. It's really easy to get started with contributing ideas and issues, so check out [the Code of Conduct](/.github/CODE_OF_CONDUCT.md) and [creating issues](/.github/issues.md) to get started.
 
 ## License
 MIT License
