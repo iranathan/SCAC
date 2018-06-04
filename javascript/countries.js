@@ -1,4 +1,4 @@
-const countries = {
+var countries = {
   // Asia
   AU: "Australia",
   JP: "Japan",
