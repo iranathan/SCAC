@@ -1,5 +1,4 @@
 # Spotify Content Availability Checker
-[![pipeline status](https://gitlab.com/itspugle/scac/badges/master/pipeline.svg)](https://gitlab.com/itspugle/scac/commits/master)
 SCAC allows anyone to find the markets where Spotify songs can be streamed :headphones:  
 
 **Why?** Because knowing about music licensing can be hard to stay "in the loop" about; and that's what SCAC is for. When music is truely available to all, it takes its trueform of inspiration.
