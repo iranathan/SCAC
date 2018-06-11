@@ -69,4 +69,11 @@ var countries = {
   US: "United States",
   // Africa
   ZA: "South Africa"
-};
+}
+
+function country(string) {
+  string.forEach(function(code) {
+    var pos = string.indexOf(code);
+    string[pos] = countries.code;
+  });
+}
