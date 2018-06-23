@@ -37,30 +37,62 @@
     -->
     
     <!-- Footer CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/footer.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/footer.css"> -->
+    <!-- Site CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/site.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   </head>
   
   <body>
-    <div class="container">
-      <h1 class="mt-2">Spotify Content Availability Checker</h1>
-      <p>Using the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check where certain tracks can be streamed from.</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand title" href="#">SCAC</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Search<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Contact
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="https://community.spotify.com/t5/user/viewprofilepage/user-id/14326494" class="dropdown-item">Spotify Community</a>
+              <a href="https://twitter.com/ItsPugle" class="dropdown-item" target="_blank">Twitter</a>
+              <a href="mailto:tim@itspugle.ga?subject=SCAC" class="dropdown-item">Email</a>
+              <div class="dropdown-divider"></div>
+              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues" class="dropdown-item" target="_blank">Report Issues</a>
+              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues" class="dropdown-item" target="_blank">Suggest Features</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <span class="navbar-text">
+        Spotify Content Availability Checker 
+      </span>
+    </nav>
+    <div class="container mt-3">
+      <p>Using the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check where certain tracks can be streamed from.
+      <br>
+      Enter the Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track in the box below to get started.</p>
       <form class="form">
         <div class="row">
           <div class="col-md">
-            <label for="trackInput">Enter the Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track in the box below:</label>
-          </div>
-          <div class="w-100"></div>
-          <div class="col-md">
-            <input type="text" class="form-control mb-3" id="trackInput" placeholder="Spotify URL or URI of a track">
+            <input type="text" class="form-control" id="trackInput" placeholder="Spotify URL or URI of a track">
           </div>
           <div class="col-auto">
             <button type="button" onclick="parse()" class="btn btn-success goBtn">Search</input>
           </div>
         </div>
       </form>
-      <div class="alert alert-secondary alert-dismissible fade show" id="authAlert" role="alert">
+      <div class="alert alert-secondary alert-dismissible fade show mt-2" id="authAlert" role="alert">
         If you've just arrived here, you may not be authenticated. Click "Search" above to check, or click <a href="#" onclick="parse()" class="alert-link">here</a>!
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span>&times;</span>
@@ -72,11 +104,13 @@
         <p id="description"></p>
         <p id="countries"></p>
       </div>
+      <!--
       <span class="footer">
         <p>
           <a href="about.html" target="_self">About</a> | <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues" target="_blank">Report issues or suggest features</a>
         </p>
       </span>
+      -->
     </div>
   </body>
 </html>
