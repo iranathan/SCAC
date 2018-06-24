@@ -11,9 +11,9 @@ function parse() {
   } else { // trackInput == not recognised
     document.getElementById("warnings").style.display = "inline";
     document.getElementById("warnings").innerHTML = invalid + error;
-    document.getElementById("playButton").innerHTML = null;
-    document.getElementById("description").innerHTML = null;
-    document.getElementById("countries").innerHTML = null;
+    document.getElementById("embed").innerHTML = null;
+    document.getElementById("label").innerHTML = null;
+    document.getElementById("list").innerHTML = null;
   }
   
   search(trackID);
@@ -50,15 +50,17 @@ function search(trackID) {
           markets = "<ul><li>" + str.join("</li><li>") + "</li></ul>";
         if (str.toString() === "") {
           trackName = trackName.slice(1, trackName.length - 1);
-          document.getElementById("description").innerHTML = "<strong>" + trackName + "</strong> song is available anywhere Spotify is available.";
-          document.getElementById("countries").outerHTML = "";
-          document.getElementById("playButton").innerHTML = embedPrefix + trackID + embedSuffix;
+          document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> song is available anywhere Spotify is available.";
+          document.getElementById("list").outerHTML = "";
+          document.getElementById("embed").innerHTML = embedPrefix + trackID + embedSuffix;
+          document.getElementById("embed").classList.add("mt-3");
           document.getElementById("authAlert").style.display = "none";
         } else {
           trackName = trackName.slice(1, trackName.length - 1);
-          document.getElementById("description").innerHTML = "<strong>" + trackName + "</strong> is available in these countries:";
-          document.getElementById("countries").innerHTML = markets;
-          document.getElementById("playButton").innerHTML = embedPrefix + trackID + embedSuffix;
+          document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> is available in these countries:";
+          document.getElementById("list").innerHTML = markets;
+          document.getElementById("embed").innerHTML = embedPrefix + trackID + embedSuffix;
+          document.getElementById("embed").classList.add("mt-3");
           document.getElementById("authAlert").style.display = "none";
         }
       }
