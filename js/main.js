@@ -1,3 +1,4 @@
+/* Disabled Links */
 var disabledLinks = document.getElementsByClassName("link-disabled");
 for (var i = 0; i < disabledLinks.length; i++) {
   var content = disabledLinks[i].innerHTML;
@@ -6,6 +7,20 @@ for (var i = 0; i < disabledLinks.length; i++) {
   disabledLinks[i].setAttribute("href", "#");
 }
 
+/* Allows for ?track=ID */
+function getURLParameter(e) {
+  "use strict";
+  return decodeURI((new RegExp(e + "=(.+?)(&|$)").exec(location.search) || [, ""])[1]);
+}
+
+if (getURLParameter("track") === "") {
+  console.info("No track parameter was found in the URL.");
+} else {
+  console.info("A track parameter was found in the URL, and prefilled.");
+  document.getElementById("trackInput").value = getURLParameter("track");
+}
+
+/* Sanitisation and Errors */
 function parse() {
   "use strict";
   var trackID = document.getElementById("trackInput").value,
@@ -27,6 +42,7 @@ function parse() {
   search(trackID);
 }
 
+/* Querying */
 function search(trackID) {
   "use strict";
   var hash = window.location.hash.substring(1).split("&").reduce(function (initial, item) {
