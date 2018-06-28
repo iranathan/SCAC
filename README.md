@@ -9,7 +9,7 @@ Using SCAC is as easy as one-two-three:
 2. Authenticate the tool by pressing "OKAY" on the Spotify authorisation page,
 3. Paste in the Spotify URL or URI of a track and click "Search"!
 
-![Demonstration of the tool](/assets/demo.gif)
+![Demonstration of the tool](https://cdn.itspugle.ga/spotify/scac/demo.gif)
 
 ## Contributing
 Contributing to SCAC fills the hearts of many, and helps to keep this project constantly moving. It's really easy to get started with contributing ideas and issues, so check out [the Code of Conduct](https://gitlab.com/itspugle/scac/blob/master/CONTRIBUTING.md) and [creating issues](https://gitlab.com/itspugle/scac/wikis/Creating-Issues) to get started.
