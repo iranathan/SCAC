@@ -19,7 +19,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Spotify Content Availability Checker (SCAC for short) allows anyone to enter a Spotify URL or URI of a track and find what markets where people can stream that content" />
+    <meta name="description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
     <meta name="keywords" content="scac, spotify, spotify community, spotify web api, spotify content availability checker">
     <link rel="author" href="https://itspugle.ga" />
     <link rel="canonical" href="https://scac.itspugle.ga/index.html" />
@@ -27,7 +27,7 @@
     <!-- Facebook and Twitter Meta -->
     <meta property="og:url" content="https://scac.itspugle.ga/index.html" />
     <meta property="og:image" content="https://scac.itspugle.ga/favicon.ico" />
-    <meta property="og:description" content="Spotify Content Availability Checker (SCAC for short) allows anyone to enter a Spotify URL or URI of a track and find what markets where people can stream that content" />
+    <meta property="og:description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
     <meta property="og:title" content="Search" />
     <meta property="og:site_name" content="Spotify Content Availability Checker" />
     <meta property="og:see_also" content="https://scac.itspugle.ga/about.html" />
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content="https://scac.itspugle.ga/index.html" />
     <meta name="twitter:title" content="Search" />
-    <meta name="twitter:description" content="Spotify Content Availability Checker (SCAC for short) allows anyone to enter a Spotify URL or URI of a track and find what markets where people can stream that content" />
+    <meta name="twitter:description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
     <meta name="twitter:image" content="https://scac.itspugle.ga/favicon.ico" />
     
     <!-- CSS -->
@@ -50,8 +50,8 @@
       <a class="navbar-brand title" href="#">SCAC</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Search</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Search</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
@@ -63,8 +63,8 @@
               <a href="https://twitter.com/ItsPugle" class="dropdown-item" target="_blank">Twitter</a>
               <a href="mailto:tim@itspugle.ga?subject=SCAC" class="dropdown-item">Email</a>
               <div class="dropdown-divider"></div>
-              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item" target="_blank">Issues and Suggestions</a>
-              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item" target="_blank">Feedback</a>
+              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Issues and Suggestions</a>
+              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Feedback</a>
             </div>
           </li>
         </ul>
@@ -93,6 +93,9 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span>&times;</span>
         </button>
+      </div>
+      <div>
+        <p id="test" onmouseover="this.innerHTML = 'yo'" onmouseout="this.innerHTML = 'Hi'">Hi</p>
       </div>
       <div id="results">
         <span id="warnings" style="display: none"></span>

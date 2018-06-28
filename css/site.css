@@ -21,3 +21,11 @@ body {
 #authAlert {
   font-size: 1rem !important;
 }
+
+.link-disabled {
+  text-decoration: line-through;
+}
+
+.link-disabled:hover {
+  text-decoration: none;
+}
