@@ -1,12 +1,3 @@
-/* Disabled Links */
-var disabledLinks = document.getElementsByClassName("link-disabled");
-for (var i = 0; i < disabledLinks.length; i++) {
-  var content = disabledLinks[i].innerHTML;
-  disabledLinks[i].setAttribute("onmouseover", "this.innerHTML = 'This link has been disabled'");
-  disabledLinks[i].setAttribute("onmouseout", "this.innerHTML = '" + content + "'");
-  disabledLinks[i].setAttribute("href", "#");
-}
-
 /* Allows for ?track=ID */
 function getURLParameter(e) {
   "use strict";
@@ -26,7 +17,7 @@ function parse() {
   var trackID = document.getElementById("trackInput").value,
     invalid = "<div class='alert alert-danger' role='alert'><h4 class='alert-heading'>Uh oh! Something's not right.</h4><hr><p>It looks like you might be entering something other than a Spotify, or not entering anything at all!<br>Make sure that you're entering a valid Spotify <abbr title='For example, https://open.spotify.com/track/123456789abcdefghijklm'>URL</abbr> or <abbr title='For example, spotify:track:123456789abcdefghijklm'>URI</abbr> of a track.</p></div>",
     error = "<p><strong>Think you've found an issue?</strong> Let me know by clicking <code>Report issues or suggest features</code> in the footer.</p>";
-  
+
   if (trackID.includes("https://open.spotify.com/track/")) { // trackInput == Spotify URL
     trackID = trackID.slice(31, 53);
   } else if (trackID.includes("spotify:track:")) { // trackInput == Spotify URI
@@ -38,7 +29,7 @@ function parse() {
     document.getElementById("label").innerHTML = null;
     document.getElementById("list").innerHTML = null;
   }
-  
+
   search(trackID);
 }
 
@@ -58,7 +49,7 @@ function search(trackID) {
     embedSuffix = "' width='400' height='80' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>",
     clientId = "c87ccc0ea8804a7b8b38d81ab3521827",
     redirectUri = "https://scac.itspugle.ga";
-  
+
   if (!token) {
     window.location = authEndpoint + "?client_id=" + clientId + "&redirect_uri=" + redirectUri + "&response_type=token&show_dialog=true";
   } else {
