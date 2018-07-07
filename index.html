@@ -72,19 +72,15 @@
     </nav>
 
     <div class="container mt-3">
-      <p>Using the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check where certain tracks can be streamed from.
-      <br>
-      Enter the Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track in the box below to get started.</p>
+      <p>
+        Using the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check where certain tracks can be streamed from.
+        <br>
+        Enter the Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track in the box below to get started.
+      </p>
       <form class="form">
         <div class="row">
           <div class="col-md">
             <input type="text" class="form-control" id="trackInput" placeholder="Spotify URL or URI of a track">
-          </div>
-          <div class="col-auto">
-            <select class="form-control">
-              <option value="DEF">Select a country...</option>
-              <option value="AU">Australia</option>
-            </select>
           </div>
           <div class="col-auto">
             <button type="button" onclick="parse()" class="btn btn-success goBtn">Search</input>
