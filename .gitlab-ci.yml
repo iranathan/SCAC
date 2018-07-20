@@ -2,6 +2,7 @@ pages:
   stage: deploy
   script:
     - mkdir .public
+    - rm .gitlab-ci.yml ACKNOWLEDGEMENTS.md CHANGELOG.md CONTRIBUTING.md README.md LICENSE
     - cp -r * .public
     - mv .public public
   artifacts:
