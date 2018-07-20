@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -6,71 +7,90 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'UA-51792746-11');
+      gtag("config", "UA-51792746-11",
+        {"anonymize_ip":true}
+      );
     </script>
-
-    <title>About &raquo; SCAC</title>
-    
-    <!-- Required metadata -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- 
-    JavaScript Libraries 
-    -->
-    
-    <!-- jQuery JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
-    
-    <!--
-    CSS Libraries
-    -->
-    
-    <!-- Footer CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/footer.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>About</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
+    <meta name="keywords" content="scac, spotify, spotify community, spotify web api, spotify content availability checker">
+    <link rel="author" href="https://itspugle.ga" />
+    <link rel="canonical" href="https://scac.itspugle.ga/about.html" />
+    <!-- Facebook and Twitter Meta -->
+    <meta property="og:url" content="https://scac.itspugle.ga/about.html" />
+    <meta property="og:image" content="https://scac.itspugle.ga/favicon.ico" />
+    <meta property="og:description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
+    <meta property="og:title" content="About" />
+    <meta property="og:site_name" content="Spotify Content Availability Checker" />
+    <meta property="og:see_also" content="https://scac.itspugle.ga/index.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://scac.itspugle.ga/about.html" />
+    <meta name="twitter:title" content="About" />
+    <meta name="twitter:description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
+    <meta name="twitter:image" content="https://scac.itspugle.ga/favicon.ico" />
+    <!-- CSS & Less -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet/less" type="text/css" href="./less/site.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.2/less.min.js" rel="preload"></script>
   </head>
+
   <body>
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand title" href="#">SCAC</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="https://community.spotify.com/t5/user/viewprofilepage/user-id/14326494" class="dropdown-item">Spotify Community</a>
+              <a href="https://twitter.com/ItsPugle" class="dropdown-item" target="_blank">Twitter</a>
+              <a href="mailto:tim@itspugle.ga?subject=SCAC" class="dropdown-item">Email</a>
+              <div class="dropdown-divider"></div>
+              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Issues and Suggestions</a>
+              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Feedback</a>
+            </div>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Spotify Content Availability Checker
+        </span>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
       <h1 class="mt-2">About</h1>
-      <p>Spotify Content Availability Checker (SCAC for short) allows anyone to enter a Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track and find what "markets" (countries) where people can stream that content.</p>
+      <p>Spotify Content Availability Checker (SCAC for short) allows anyone to enter a Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track and find what markets where people can stream that content.</p>
       <div id="quickFacts">
         <h2>Quick Facts</h2>
         <dl>
           <dt>Current Version</dt>
-          <dd><a href="https://gitlab.com/itspugle/scac/blob/master/CHANGELOG.md" target="_blank"><abbr title="v1.0.1 since 22 June 2018">v1.0.1</abbr></a></dd>
+          <dd id="version"><em>Loading...</em></dd>
           <dt>Repository</dt>
           <dd><a href="https://gitlab.com/ItsPugle/scac" target="_blank">ItsPugle/scac</a></dd>
         </dl>
       </div>
       <div id="acknowledgements">
-      <h2>Acknowledgements</h2>
-      <ul>
-        <dl>
-          <li>
-            <dt><a href="https://freedcamp.com/" target="_blank">Freedcamp</a></dt>
-            <dd>Freedcamp is an all-in-one project management, CRM and sales tool.</dd>
-          </li>
-          <li>
-            <dt><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></dt>
-            <dd>Bootstrap is a community-run bundle of JS and CSS and the most used modern web library.</dd>
-          </li>
-          <li>
-            <dt><a href="https://glitch.com/edit/#!/spotify-implicit-grant" target="_blank">spotify-implicit-grant</a></dt>
-            <dd>spotify-implicit-grant is a Glitch project that demonstrates how to use the Spotify Web API.</dd>
-          </li>
-        </dl>
-      </ul>
+        <h2>Acknowledgements</h2>
+        <p>Acknowledgements have moved! You can now check them out over <a href="https://gitlab.com/itspugle/scac/blob/master/ACKNOWLEDGEMENTS.md" target="_blank">here</a>.</p>
       </div>
-      <span class="footer">
-        <p>
-          <a href="index.html" target="_self">Home</a> | <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues" target="_blank">Report issues or suggest features</a>
-        </p>
-      </span>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="./js/disabledlinks.js" defer></script>
+    <script src="./js/log.js" defer></script>
   </body>
 </html>

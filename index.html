@@ -7,76 +7,103 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'UA-51792746-11');
+      gtag("config", "UA-51792746-11",
+        {"anonymize_ip":true}
+      );
     </script>
-
-    <title>Search &raquo; SCAC</title>
-    
-    <!-- Required metadata -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- 
-    JavaScript Libraries 
-    -->
-    
-    <!-- URL Parameters JS -->
-    <script src="./javascript/parameters.js" async></script>
-    <!-- Spotify Query JS -->
-    <script src="./javascript/main.js" defer></script>
-    <!-- jQuery JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous" defer></script>
-    
-    <!--
-    CSS Libraries
-    -->
-    
-    <!-- Footer CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/footer.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>Search</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
+    <meta name="keywords" content="scac, spotify, spotify community, spotify web api, spotify content availability checker">
+    <link rel="author" href="https://itspugle.ga" />
+    <link rel="canonical" href="https://scac.itspugle.ga/index.html" />
+    <!-- Facebook and Twitter Meta -->
+    <meta property="og:url" content="https://scac.itspugle.ga/index.html" />
+    <meta property="og:image" content="https://scac.itspugle.ga/favicon.ico" />
+    <meta property="og:description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
+    <meta property="og:title" content="Search" />
+    <meta property="og:site_name" content="Spotify Content Availability Checker" />
+    <meta property="og:see_also" content="https://scac.itspugle.ga/about.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://scac.itspugle.ga/index.html" />
+    <meta name="twitter:title" content="Search" />
+    <meta name="twitter:description" content="SCAC allows anyone to find the markets where Spotify songs can be streamed." />
+    <meta name="twitter:image" content="https://scac.itspugle.ga/favicon.ico" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet/less" type="text/css" href="./less/site.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js" ></script>
   </head>
-  
+
   <body>
-    <div class="container">
-      <h1 class="mt-2">Spotify Content Availability Checker</h1>
-      <p>Using the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check where certain tracks can be streamed from.</p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand title" href="#">SCAC</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="https://community.spotify.com/t5/user/viewprofilepage/user-id/14326494" class="dropdown-item">Spotify Community</a>
+              <a href="https://twitter.com/ItsPugle" class="dropdown-item" target="_blank">Twitter</a>
+              <a href="mailto:tim@itspugle.ga?subject=SCAC" class="dropdown-item">Email</a>
+              <div class="dropdown-divider"></div>
+              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Issues and Suggestions</a>
+              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Feedback</a>
+            </div>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Spotify Content Availability Checker
+        </span>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+      <p>
+        Using the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check where certain tracks can be streamed from.
+        <br>
+        Enter the Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track in the box below to get started.
+      </p>
       <form class="form">
         <div class="row">
           <div class="col-md">
-            <label for="trackInput">Enter the Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track in the box below:</label>
-          </div>
-          <div class="w-100"></div>
-          <div class="col-md">
-            <input type="text" class="form-control mb-3" id="trackInput" placeholder="Spotify URL or URI of a track">
+            <input type="text" class="form-control" id="trackInput" placeholder="Spotify URL or URI of a track">
           </div>
           <div class="col-auto">
             <button type="button" onclick="parse()" class="btn btn-success goBtn">Search</input>
           </div>
         </div>
       </form>
-      <div class="alert alert-secondary alert-dismissible fade show" id="authAlert" role="alert">
+      <div class="alert alert-secondary alert-dismissible fade show mt-2" id="authAlert" role="alert">
         If you've just arrived here, you may not be authenticated. Click "Search" above to check, or click <a href="#" onclick="parse()" class="alert-link">here</a>!
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span>&times;</span>
         </button>
       </div>
-      <div>
+      <div id="results">
         <span id="warnings" style="display: none"></span>
-        <p id="playButton"></p>
-        <p id="description"></p>
-        <p id="countries"></p>
+        <p id="embed"></p>
+        <p id="label"></p>
+        <p id="list"></p>
       </div>
-      <span class="footer">
-        <p>
-          <a href="about.html" target="_self">About</a> | <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues" target="_blank">Report issues or suggest features</a>
-        </p>
-      </span>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/disabledlinks.js" defer></script>
+    <script src="./js/log.js" defer></script>
   </body>
 </html>
