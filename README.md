@@ -11,6 +11,6 @@ Using SCAC is easy. In fact, it's as easy as 1-2-3:
 
 ![Demo](https://cdn.itspugle.ga/spotify/scac/demo.gif)
 
-**Contributing** Provided that you don't act like [a dick](https://gitlab.com/itspugle/scac/blob/master/CONTRIBUTING.md) to anyone, go for it.  
+**Contributing** Provided that you're being [friendly, appropriate and a good soul](https://gitlab.com/itspugle/scac/blob/master/CONTRIBUTING.md) go for it. Eternal hugs 💚  
 **License** [MIT License](https://gitlab.com/itspugle/scac/blob/master/LICENSE).  
 **Acknowledgements** [GitLab, Bootstrap, Freedcamp, Spotify for Developers and spotify-implicit-grant](https://gitlab.com/itspugle/scac/blob/master/ACKNOWLEDGEMENTS.md).  
