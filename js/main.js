@@ -64,7 +64,7 @@ function search(trackID) {
         var markets = data.available_markets,
           trackName = JSON.stringify(data.name);
 
-        if (str.toString() === "") {
+        if (markets.toString() === "") {
           trackName = trackName.slice(1, trackName.length - 1);
           document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> song is available anywhere Spotify is available.";
           document.getElementById("list").outerHTML = "";
