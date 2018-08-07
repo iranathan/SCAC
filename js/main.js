@@ -77,7 +77,7 @@ function search(trackID) {
           document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> is available in these countries:";
           const list = document.getElementById("list");
           for (var i = 0; i < markets.length; i++) {
-            listItem = legend[markets[i]];
+            let listItem = legend[markets[i]];
             const newItem = document.createElement("li");
             newItem.innerText = listItem;
             list.appendChild(newItem);
