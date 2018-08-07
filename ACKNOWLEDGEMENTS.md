@@ -1,5 +1,5 @@
 # Acknowledgements
-- [GitLab](https://gitlab.com)  
+- [GitHub](https://github.com)  
 Hosting, project management, task tracking and versioning of SCAC and the ItsPugle CDN
 - [Bootstrap](https://getbootstrap.com)  
 Some styling and layout of SCAC
