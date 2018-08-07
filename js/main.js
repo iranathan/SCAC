@@ -82,6 +82,7 @@ function search(trackID) {
             newItem.innerText = listItem;
             list.appendChild(newItem);
           }
+          console.log("Successfully expanded country names.")
           document.getElementById("embed").innerHTML = embedPrefix + trackID + embedSuffix;
           document.getElementById("embed").classList.add("mt-3");
           document.getElementById("authAlert").style.display = "none";
