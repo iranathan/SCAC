@@ -79,7 +79,7 @@ function search(trackID) {
           for (var i = 0; i < markets.length; i++) {
             let listItem = legend[markets[i]];
             const newItem = document.createElement("li");
-            newItem.innerText = listItem;
+            newItem.innerHTML = listItem + " <small class='text-muted'>" + markets[i] + "</small>";
             list.appendChild(newItem);
           }
           console.log("Successfully expanded country names.")
