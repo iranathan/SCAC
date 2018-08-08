@@ -1,3 +1,5 @@
+const trackInput = document.getElementById("track-input").value;
+
 /* Allows for ?track=ID */
 function getURLParameter(e) {
   "use strict";
@@ -8,13 +10,13 @@ if (getURLParameter("track") === "") {
   console.info("No track parameter was found in the URL.");
 } else {
   console.info("A track parameter was found in the URL, and prefilled.");
-  document.getElementById("trackInput").value = getURLParameter("track");
+  trackInput = getURLParameter("track");
 }
 
 /* Sanitisation and Errors */
 function parse() {
   "use strict";
-  var trackID = document.getElementById("trackInput").value,
+  var trackID = trackInput;
     invalid = "<div class='alert alert-danger' role='alert'><h4 class='alert-heading'>Uh oh! Something's not right.</h4><hr><p>It looks like you might be entering something other than a Spotify, or not entering anything at all!<br>Make sure that you're entering a valid Spotify <abbr title='For example, https://open.spotify.com/track/123456789abcdefghijklm'>URL</abbr> or <abbr title='For example, spotify:track:123456789abcdefghijklm'>URI</abbr> of a track.</p></div>",
     error = "<p><strong>Think you've found an issue?</strong> Let me know by clicking <code>Report issues or suggest features</code> in the footer.</p>";
 
@@ -64,29 +66,33 @@ function search(trackID) {
         var markets = data.available_markets,
           trackName = JSON.stringify(data.name);
 
+        const listElm = document.getElementById("market-list");
+        const labelElm = document.getElementById("label");
+        const embedElm = document.getElementById("embed");
+        const authAlertElm = document.getElementById("auth-alert")
+
         if (markets.toString() === "") {
           trackName = trackName.slice(1, trackName.length - 1);
-          document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> song is available anywhere Spotify is available.";
-          document.getElementById("list").outerHTML = "";
-          document.getElementById("embed").innerHTML = embedPrefix + trackID + embedSuffix;
-          document.getElementById("embed").classList.add("mt-3");
-          document.getElementById("authAlert").style.display = "none";
+          labelElm.innerHTML = "<strong>" + trackName + "</strong> song is available anywhere Spotify is available.";
+          listElm.outerHTML = "";
+          embedElm.innerHTML = embedPrefix + trackID + embedSuffix;
+          embedElm.classList.add("mt-3");
+          authAlertElm.style.display = "none";
 
         } else {
           trackName = trackName.slice(1, trackName.length - 1);
-          document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> is available in these countries:";
-          const list = document.getElementById("list");
+          labelElm.innerHTML = "<strong>" + trackName + "</strong> is available in these countries:";
           for (var i = 0; i < markets.length; i++) {
             let expandedCountry = countriesLegend[markets[i]];
             let emoji = emojiLegend[markets[i]]
             const newItem = document.createElement("li");
             newItem.innerHTML = emoji + " " + expandedCountry + " <small class='text-muted'>" + markets[i] + "</small>";
-            list.appendChild(newItem);
+            listElm.appendChild(newItem);
           }
           console.log("Successfully expanded country names.")
-          document.getElementById("embed").innerHTML = embedPrefix + trackID + embedSuffix;
-          document.getElementById("embed").classList.add("mt-3");
-          document.getElementById("authAlert").style.display = "none";
+          embedElm.innerHTML = embedPrefix + trackID + embedSuffix;
+          embedElm.classList.add("mt-3");
+          authAlertElm.style.display = "none";
         }
       }
     });
