@@ -60,20 +60,30 @@ function search(trackID) {
         xhr.setRequestHeader("Authorization", "Bearer " + token);
       },
       success: function success(data) {
-        var str = data.available_markets,
-          trackName = JSON.stringify(data.name),
-          markets = "<ul><li>" + str.join("</li><li>") + "</li></ul>";
-        if (str.toString() === "") {
+
+        var markets = data.available_markets,
+          trackName = JSON.stringify(data.name);
+
+        if (markets.toString() === "") {
           trackName = trackName.slice(1, trackName.length - 1);
           document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> song is available anywhere Spotify is available.";
           document.getElementById("list").outerHTML = "";
           document.getElementById("embed").innerHTML = embedPrefix + trackID + embedSuffix;
           document.getElementById("embed").classList.add("mt-3");
           document.getElementById("authAlert").style.display = "none";
+
         } else {
           trackName = trackName.slice(1, trackName.length - 1);
           document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> is available in these countries:";
-          document.getElementById("list").innerHTML = markets;
+          const list = document.getElementById("list");
+          for (var i = 0; i < markets.length; i++) {
+            let expandedCountry = countriesLegend[markets[i]];
+            let emoji = emojiLegend[markets[i]]
+            const newItem = document.createElement("li");
+            newItem.innerHTML = emoji + " " + expandedCountry + " <small class='text-muted'>" + markets[i] + "</small>";
+            list.appendChild(newItem);
+          }
+          console.log("Successfully expanded country names.")
           document.getElementById("embed").innerHTML = embedPrefix + trackID + embedSuffix;
           document.getElementById("embed").classList.add("mt-3");
           document.getElementById("authAlert").style.display = "none";
@@ -82,3 +92,149 @@ function search(trackID) {
     });
   }
 }
+
+const countriesLegend = {
+  // Asia
+  AU: "Australia",
+  JP: "Japan",
+  IL: "Israel",
+  HK: "Hong Kong",
+  ID: "Indonesia",
+  MY: "Malaysia",
+  NZ: "New Zealand",
+  PH: "Philippines",
+  SG: "Singapore",
+  TW: "Taiwan",
+  TH: "Thailand",
+  VN: "Vietnam",
+  // Europe
+  AD: "Andorra",
+  AT: "Austria",
+  BE: "Belgium",
+  BG: "Bulgaria",
+  CY: "Cyprus",
+  CZ: "Czech Republic",
+  DK: "Denmark",
+  EE: "Estonia",
+  FI: "Finland",
+  FR: "France",
+  DE: "Germany",
+  GR: "Greece",
+  HU: "Hungary",
+  IS: "Iceland",
+  IE: "Ireland",
+  IT: "Italy",
+  LV: "Latvia",
+  LI: "Liechtenstien",
+  LT: "Lithuania",
+  LU: "Luxembourg",
+  MT: "Malta",
+  MC: "Monaco",
+  NL: "Netherlands",
+  NO: "Norway",
+  PL: "Poland",
+  PT: "Portugal",
+  RO: "Romania",
+  SK: "Slovakia",
+  ES: "Spain",
+  SE: "Sweden",
+  CH: "Switzerland",
+  TR: "Turkey",
+  GB: "United Kingdom",
+  // Latin America and the Caribbean
+  AR: "Argentina",
+  BO: "Bolivia",
+  BR: "Brazil",
+  CL: "Chile",
+  CO: "Colombia",
+  CR: "Costa Rica",
+  DO: "Dominican Republic",
+  EC: "Ecuador",
+  SV: "El Savador",
+  GT: "Guatamala",
+  HN: "Honduras",
+  MX: "Mexico",
+  NI: "Nicaragua",
+  PA: "Panama",
+  PY: "Paraguy",
+  PE: "Peru",
+  UY: "Uruguay",
+  // North America
+  CA: "Canada",
+  US: "United States",
+  // Africa
+  ZA: "South Africa"
+};
+
+const emojiLegend = {
+  // Asia
+  AU: "🇦🇺",
+  JP: "🇯🇵",
+  IL: "🇮🇱",
+  HK: "🇭🇰",
+  ID: "🇮🇩",
+  MY: "🇲🇾",
+  NZ: "🇳🇿",
+  PH: "🇵🇭",
+  SG: "🇸🇬",
+  TW: "🇹🇼",
+  TH: "🇹🇭",
+  VN: "🇻🇳",
+  // Europe
+  AD: "🇦🇩",
+  AT: "🇦🇹",
+  BE: "🇧🇪",
+  BG: "🇧🇬",
+  CY: "🇨🇾",
+  CZ: "🇨🇿",
+  DK: "🇩🇰",
+  EE: "🇪🇪",
+  FI: "🇫🇮",
+  FR: "🇫🇷",
+  DE: "🇩🇪",
+  GR: "🇬🇷",
+  HU: "🇭🇺",
+  IS: "🇮🇸",
+  IE: "🇮🇪",
+  IT: "🇮🇹",
+  LV: "🇱🇻",
+  LI: "🇱🇮",
+  LT: "🇱🇹",
+  LU: "🇱🇺",
+  MT: "🇲🇹",
+  MC: "🇲🇨",
+  NL: "🇳🇱",
+  NO: "🇳🇴",
+  PL: "🇵🇱",
+  PT: "🇵🇹",
+  RO: "🇷🇴",
+  SK: "🇸🇰",
+  ES: "🇪🇸",
+  SE: "🇸🇪",
+  CH: "🇨🇭",
+  TR: "🦃",
+  GB: "🇬🇧",
+  // Latin America and the Caribbean
+  AR: "🇦🇷",
+  BO: "🇧🇴",
+  BR: "🇧🇷",
+  CL: "🇨🇱",
+  CO: "🇨🇴",
+  CR: "🇨🇷",
+  DO: "🇩🇴",
+  EC: "🇪🇨",
+  SV: "🇸🇻",
+  GT: "🇬🇹",
+  HN: "🇭🇳",
+  MX: "🇲🇽",
+  NI: "🇳🇮",
+  PA: "🇵🇦",
+  PY: "🇵🇾",
+  PE: "🇵🇪",
+  UY: "🇺🇾",
+  // North America
+  CA: "🇨🇦",
+  US: "🇺🇸",
+  // Africa
+  ZA: "🇿🇦"
+};

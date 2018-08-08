@@ -35,8 +35,7 @@
     <meta name="twitter:image" content="https://scac.itspugle.ga/favicon.ico" />
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet/less" type="text/css" href="./less/site.less" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="./css/site.css" />
   </head>
 
   <body>
@@ -60,8 +59,8 @@
               <a href="https://twitter.com/ItsPugle" class="dropdown-item" target="_blank">Twitter</a>
               <a href="mailto:tim@itspugle.ga?subject=SCAC" class="dropdown-item">Email</a>
               <div class="dropdown-divider"></div>
-              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Issues and Suggestions</a>
-              <a href="https://gitlab.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Feedback</a>
+              <a href="https://github.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Issues and Suggestions</a>
+              <a href="https://github.com/itspugle/scac/wikis/Creating-Issues#feedback" class="dropdown-item link-disabled disabled" target="_blank">Feedback</a>
             </div>
           </li>
         </ul>
@@ -73,7 +72,7 @@
 
     <div class="container mt-3">
       <p>
-        Using the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check where certain tracks can be streamed from.
+        Using the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">magic of Spotify</a>, this tool will let you check the <abbr title="countries or terittories">markets</abbr> that certain tracks can be streamed from.
         <br>
         Enter the Spotify <abbr title="For example, https://open.spotify.com/track/123456789abcdefghijklm">URL</abbr> or <abbr title="For example, spotify:track:123456789abcdefghijklm">URI</abbr> of a track in the box below to get started.
       </p>
@@ -100,8 +99,8 @@
         <p id="list"></p>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script src="./js/main.js" defer></script>
     <script src="./js/disabledlinks.js" defer></script>
     <script src="./js/log.js" defer></script>

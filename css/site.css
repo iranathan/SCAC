@@ -26,7 +26,8 @@ body {
 
 .link-disabled {
   text-decoration: line-through;
-  &:hover {
-    text-decoration: none;
-  }
+}
+
+.link-disabled:hover {
+  text-decoration: none;
 }

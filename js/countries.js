@@ -71,8 +71,10 @@ var legend = {
   ZA: "South Africa"
 }
 
-"use strict";
-
-var input = ["AU", "ZA", "PA"];
-
-console.log(input.map(code => legend[code]));
+for (var i = 0; i < countries.length; i++) {
+  listItem = legend[countries[i]];
+  const list = document.getElementById("countriesList");
+  const newItem = document.createElement("li");
+  newItem.innerText = listItem;
+  list.appendChild(newItem);
+}
