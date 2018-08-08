@@ -77,9 +77,10 @@ function search(trackID) {
           document.getElementById("label").innerHTML = "<strong>" + trackName + "</strong> is available in these countries:";
           const list = document.getElementById("list");
           for (var i = 0; i < markets.length; i++) {
-            let listItem = legend[markets[i]];
+            let expandedCountry = countriesLegend[markets[i]];
+            let emoji = emojiLegend[markets[i]]
             const newItem = document.createElement("li");
-            newItem.innerHTML = listItem + " <small class='text-muted'>" + markets[i] + "</small>";
+            newItem.innerHTML = emoji + " " + expandedCountry + " <small class='text-muted'>" + markets[i] + "</small>";
             list.appendChild(newItem);
           }
           console.log("Successfully expanded country names.")
@@ -92,7 +93,7 @@ function search(trackID) {
   }
 }
 
-var legend = {
+const countriesLegend = {
   // Asia
   AU: "Australia",
   JP: "Japan",
@@ -139,7 +140,7 @@ var legend = {
   SE: "Sweden",
   CH: "Switzerland",
   TR: "Turkey",
-  UK: "United Kingdom",
+  GB: "United Kingdom",
   // Latin America and the Caribbean
   AR: "Argentina",
   BO: "Bolivia",
@@ -163,4 +164,77 @@ var legend = {
   US: "United States",
   // Africa
   ZA: "South Africa"
-}
+};
+
+const emojiLegend = {
+  // Asia
+  AU: "🇦🇺",
+  JP: "🇯🇵",
+  IL: "🇮🇱",
+  HK: "🇭🇰",
+  ID: "🇮🇩",
+  MY: "🇲🇾",
+  NZ: "🇳🇿",
+  PH: "🇵🇭",
+  SG: "🇸🇬",
+  TW: "🇹🇼",
+  TH: "🇹🇭",
+  VN: "🇻🇳",
+  // Europe
+  AD: "🇦🇩",
+  AT: "🇦🇹",
+  BE: "🇧🇪",
+  BG: "🇧🇬",
+  CY: "🇨🇾",
+  CZ: "🇨🇿",
+  DK: "🇩🇰",
+  EE: "🇪🇪",
+  FI: "🇫🇮",
+  FR: "🇫🇷",
+  DE: "🇩🇪",
+  GR: "🇬🇷",
+  HU: "🇭🇺",
+  IS: "🇮🇸",
+  IE: "🇮🇪",
+  IT: "🇮🇹",
+  LV: "🇱🇻",
+  LI: "🇱🇮",
+  LT: "🇱🇹",
+  LU: "🇱🇺",
+  MT: "🇲🇹",
+  MC: "🇲🇨",
+  NL: "🇳🇱",
+  NO: "🇳🇴",
+  PL: "🇵🇱",
+  PT: "🇵🇹",
+  RO: "🇷🇴",
+  SK: "🇸🇰",
+  ES: "🇪🇸",
+  SE: "🇸🇪",
+  CH: "🇨🇭",
+  TR: "🦃",
+  GB: "🇬🇧",
+  // Latin America and the Caribbean
+  AR: "🇦🇷",
+  BO: "🇧🇴",
+  BR: "🇧🇷",
+  CL: "🇨🇱",
+  CO: "🇨🇴",
+  CR: "🇨🇷",
+  DO: "🇩🇴",
+  EC: "🇪🇨",
+  SV: "🇸🇻",
+  GT: "🇬🇹",
+  HN: "🇭🇳",
+  MX: "🇲🇽",
+  NI: "🇳🇮",
+  PA: "🇵🇦",
+  PY: "🇵🇾",
+  PE: "🇵🇪",
+  UY: "🇺🇾",
+  // North America
+  CA: "🇨🇦",
+  US: "🇺🇸",
+  // Africa
+  ZA: "🇿🇦"
+};
