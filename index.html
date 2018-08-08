@@ -70,14 +70,21 @@
       <form class="form">
         <div class="row">
           <div class="col-md">
-            <input type="text" class="form-control" id="trackInput" placeholder="Spotify URL or URI of a track">
+            <input type="text" class="form-control" id="track-input" placeholder="Spotify URL or URI of a track">
+          </div>
+          <div class="col-auto">
+            <select class="form-control">
+              <option value="null">Optionally, choose a market</option>
+              <option disabled>--------</option>
+              <option value="AU">Australia</option>
+            </select>
           </div>
           <div class="col-auto">
             <button type="button" onclick="parse()" class="btn btn-success goBtn">Search</input>
           </div>
         </div>
       </form>
-      <div class="alert alert-secondary alert-dismissible fade show mt-2" id="authAlert" role="alert">
+      <div class="alert alert-secondary alert-dismissible fade show mt-2" id="auth-alert" role="alert">
         If you've just arrived here, you may not be authenticated. Click "Search" above to check, or click <a href="#" onclick="parse()" class="alert-link">here</a>!
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span>&times;</span>
@@ -87,7 +94,7 @@
         <span id="warnings" style="display: none"></span>
         <p id="embed"></p>
         <p id="label"></p>
-        <p id="list"></p>
+        <p id="market-list"></p>
       </div>
     </div>
     <script src="./js/jquery.js"></script>
